@@ -1,7 +1,7 @@
-var isTop = true;
-chrome.runtime.onMessage.addListener(function(details) {
-    document.getElementById('url').value = details;
-    console.log('Message from frame: ');
-    console.log( details);
-
+var isKhacloudPage = true;
+chrome.runtime.onMessage.addListener(function(data) {
+    // document.getElementById('url').value = data;
+    console.log('Message from iframe: '+data.id);
+    console.log(data);
+    if(window.khacloudIframeDetector) window.khacloudIframeDetector(data);
 });
