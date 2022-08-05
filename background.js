@@ -11,13 +11,12 @@ chrome.runtime.onMessage.addListener(function (message, sender) {
 });
 
 // myURLs contains the websites where you want your content script to run
-const myURLs = ['khacloud.xyz'];
+const myURLs = ['khacloud.xyz', "localhost"];
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 
   if (changeInfo.status == 'complete') {
     if (myURLs.some(url => tab.url.includes(url))) {
-      console.error('heeeeloooooooo')
 
       chrome.declarativeNetRequest.updateDynamicRules(
         {
