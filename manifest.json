@@ -4,6 +4,7 @@
   "version": "1.0",
   "manifest_version": 3,
   "background": {
+    "persistent": true,
     "service_worker": "background.js"
   },
   "content_scripts": [
@@ -17,7 +18,15 @@
     "scripting",
     "webRequest",
     "webRequestBlocking",
-    "\u003Call_urls>"
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "declarativeNetRequestFeedback",
+    "\u003Call_urls>",
+    "<all_urls>",
+    "https://*/*",
+    "http://*/*",
+    "wss://*/*",
+    "ws://*/*"
   ],
   "action": {
     "default_popup": "popup.html",
