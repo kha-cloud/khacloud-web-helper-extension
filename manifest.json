@@ -1,7 +1,7 @@
 {
   "name": "KhaCloud",
   "description": "Extention to help KhaCloud manage iframes for (Realtime, persisting) purposes",
-  "version": "4.0",
+  "version": "4.3",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
@@ -26,13 +26,7 @@
       "all_frames": true
     }
   ],
-  "declarative_net_request": {
-    "rule_resources": [{
-      "id": "1",
-      "enabled": true,
-      "path": "rules.json"
-    }]
-  },
+
 
   "permissions": [
     "storage",

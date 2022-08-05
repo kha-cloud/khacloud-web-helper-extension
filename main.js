@@ -8,3 +8,6 @@ chrome.runtime.onMessage.addListener(function(data) {
     // window.$nuxt_bus.$emit("khacloud-iframe-detector", data);
     window.postMessage({ type: "KHACLOUD_PAGE", ...data}, "*");
 });
+
+const myURLs = ['khacloud.xyz'];
+
