@@ -1,33 +1,52 @@
 {
   "name": "KhaCloud",
   "description": "Extention to help KhaCloud manage iframes for (Realtime, persisting) purposes",
-  "version": "1.0",
+  "version": "4.0",
   "manifest_version": 3,
   "background": {
-    "persistent": true,
     "service_worker": "background.js"
   },
   "content_scripts": [
-    {"js": ["main.js"], "matches": ["*://*.khacloud.xyz/*", "*://localhost/*"]},
-    {"js": ["sub.js"], "matches": ["<all_urls>"], "all_frames":true}
-],
+    {
+      "js": [
+        "main.js"
+      ],
+      "matches": [
+        "*://*.khacloud.xyz/*",
+        "*://localhost/*"
+      ]
+    },
+    {
+      "js": [
+        "sub.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ],
+      "all_frames": true
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [{
+      "id": "1",
+      "enabled": true,
+      "path": "rules.json"
+    }]
+  },
+
   "permissions": [
     "storage",
     "tabs",
     "activeTab",
     "scripting",
     "webRequest",
-    "webRequestBlocking",
     "declarativeNetRequest",
     "declarativeNetRequestWithHostAccess",
-    "declarativeNetRequestFeedback",
-    "\u003Call_urls>",
-    "<all_urls>",
-    "https://*/*",
-    "http://*/*",
-    "wss://*/*",
-    "ws://*/*"
+    "declarativeNetRequestFeedback"
   ],
+  "host_permissions": [
+		"<all_urls>"
+	],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
