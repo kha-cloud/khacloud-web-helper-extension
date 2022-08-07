@@ -30,9 +30,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
                 { header: "x-frame-options", operation: "remove" },
                 { header: "content-security-policy", operation: "remove" },
                 { header: "X-Frame-Options", operation: "remove" },
-                { header: "Content-Security-Policy", operation: "remove" },
-                
-                { header: "cookie", operation: "append", value: "; SameSite=None" },
+                { header: "Content-Security-Policy", operation: "remove" }
               ],
               requestHeaders: [
                 { header: "sec-fetch-dest", operation: "set", value: "document" },
