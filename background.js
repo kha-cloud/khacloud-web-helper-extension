@@ -22,19 +22,25 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
         {
           removeRuleIds: [1] ,
           addRules: [{
-            "id": 1,
-            "priority": 1,
-            "action": {
-              "type": "modifyHeaders",
-              "responseHeaders": [
-                { "header": "x-frame-options", "operation": "remove" },
-                { "header": "content-security-policy", "operation": "remove" },
-                { "header": "X-Frame-Options", "operation": "remove" },
-                { "header": "Content-Security-Policy", "operation": "remove" }
+            id: 1,
+            priority: 1,
+            action: {
+              type: "modifyHeaders",
+              responseHeaders: [
+                { header: "x-frame-options", operation: "remove" },
+                { header: "content-security-policy", operation: "remove" },
+                { header: "X-Frame-Options", operation: "remove" },
+                { header: "Content-Security-Policy", operation: "remove" },
+                
+                { header: "cookie", operation: "append", value: "; SameSite=None" },
+              ],
+              requestHeaders: [
+                { header: "sec-fetch-dest", operation: "set", value: "document" },
+                { header: "Sec-Fetch-Dest", operation: "set", value: "document" }
               ]
             },
-            "condition": { "urlFilter": "*", "resourceTypes": ["sub_frame"] }
-          }
+            condition: { urlFilter: "*", resourceTypes: ["sub_frame"] }
+          },
           ],
         },
       )

@@ -1,7 +1,7 @@
 {
   "name": "KhaCloud",
   "description": "Extention to help KhaCloud manage iframes for (Realtime, persisting) purposes",
-  "version": "1.0",
+  "version": "1.2",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
@@ -26,7 +26,6 @@
 		"<all_urls>"
 	],
   "action": {
-    "default_popup": "popup.html",
     "default_icon": {
       "16": "/images/get_started16.png",
       "32": "/images/get_started32.png",
