@@ -10,6 +10,7 @@ chrome.runtime.onMessage.addListener(function (message, sender) {
   }
 });
 
+
 // myURLs contains the websites where you want your content script to run
 const myURLs = ['khacloud.xyz', "localhost"];
 
