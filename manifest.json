@@ -7,7 +7,7 @@
     "service_worker": "background.js"
   },
   "content_scripts": [
-    { "js": [ "main.js" ], "matches": [ "*://*.khacloud.xyz/*", "*://localhost/*" ] },
+    { "js": [ "main.js" ], "matches": [ "*://*.khacloud.xyz/*", "*://localhost/*", "*://http://165.22.64.121/*" ] },
     { "js": [ "sub.js" ], "matches": [ "<all_urls>" ], "all_frames": true }
   ],
 
